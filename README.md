@@ -6,7 +6,7 @@ Repository that hosts all the required packages for simulating the Franka Emika 
 2. `git submodule update --init --recursive`
 3. `catkin build`
 4. remember to `source devel/setup.bash` 
-5. `roslaunch panda_simulator panda_simulation.launch` (this will start up Gazebo and RVIZ and will allow you to do planning etc. with the robot)
+5. `roslaunch panda_simulator_support panda_simulation.launch` (this will start up Gazebo and RVIZ and will allow you to do planning etc. with the robot)
 
 Notes:
 
