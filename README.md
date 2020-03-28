@@ -4,7 +4,7 @@ Repository that hosts all the required ROS packages for simulating the Franka Em
 
 1. `git clone https://git.uwaterloo.ca/vrajendr/panda_simulator.git` (into your catkin workspace e.g. catkin_ws/src folder) or add as a submodule `git submodule add https://git.uwaterloo.ca/vrajendr/panda_simulator.git`
 2. `git submodule update --init --recursive`
-3. `catkin build`
+3. `catkin build` from your catkin workspace folder
 4. remember to `source devel/setup.bash` 
 5. `roslaunch panda_simulator_support panda_simulation.launch` (this will start up Gazebo and RVIZ and will allow you to do planning etc. with the robot)
 
