@@ -18,3 +18,9 @@ As noted by the original developer of the package, "The reason why we are not sp
 ---
 
 In the panda_simulation.launch launch file, the argument gripper_center is set to `true`. This creates a new frame at the tip of the robot end effector that can be used while doing motion planning with MoveIt! (instead of using panda_link8 which is offset from the actual gripper joints)
+
+---
+
+TODO:
+
+1. Make it easy to move back and forth from simulation to the real robot. I think it mainly needs changes to the controller list in the MoveIt! config.
