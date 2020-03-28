@@ -1,6 +1,6 @@
 # panda_simulator
 
-Repository that hosts all the required ROS packages for simulating the Franka Emika Panda Arm. The libfranka is also required, but not included here.
+Repository that hosts all the required ROS packages for simulating the Franka Emika Panda Arm. libfranka is also required, but not included here.
 
 1. `git clone https://git.uwaterloo.ca/vrajendr/panda_simulator.git` (into your catkin workspace e.g. catkin_ws/src folder) or add as a submodule `git submodule add https://git.uwaterloo.ca/vrajendr/panda_simulator.git`
 2. `git submodule update --init --recursive`
