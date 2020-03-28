@@ -3,9 +3,10 @@
 Repository that hosts all the required packages for simulating the Franka Emika Panda Arm.
 
 1. `git clone https://git.uwaterloo.ca/vrajendr/panda_simulator.git` (into your catkin workspace e.g. catkin_ws/src folder) or add as a submodule `git submodule add https://git.uwaterloo.ca/vrajendr/panda_simulator.git`
-2. `catkin build`
-3. remember to `source devel/setup.bash` 
-4. `roslaunch panda_simulator panda_simulation.launch` (this will start up Gazebo and RVIZ and will allow you to do planning etc. with the robot)
+2. `git submodule update --init --recursive`
+3. `catkin build`
+4. remember to `source devel/setup.bash` 
+5. `roslaunch panda_simulator panda_simulation.launch` (this will start up Gazebo and RVIZ and will allow you to do planning etc. with the robot)
 
 Notes:
 
