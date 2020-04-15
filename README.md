@@ -3,7 +3,7 @@
 ## Package Overview
 Repository that hosts all the required ROS packages for simulating the Franka Emika Panda Arm in Gazebo. libfranka is also required, but not included here. 
 
-Please enure you have these Install dependencies:
+Please enure you have these dependencies:
 
     ```sh
     sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs ros-$ROS_DISTRO-libuvc ros-$ROS_DISTRO-gazebo-ros-control
