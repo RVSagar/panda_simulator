@@ -22,7 +22,7 @@ Default controllers used are `hardware_interface/PositionJointInterface`, if you
 ```sh
 roslaunch panda_simulator_support panda_simulation.launch controller_type:=effort
 ```
-
+---
 https://github.com/erdalpekel/panda_simulation/issues/9
 
 Ignore the following error when launching in position mode:
