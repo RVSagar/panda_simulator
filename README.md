@@ -10,9 +10,12 @@ Repository that hosts all the required ROS packages for simulating the Franka Em
 
 Notes:
 
+Default controllers used are `hardware_interface/PositionJointInterface`, if you need effort controllers use the following launch command:
+`roslaunch panda_simulator_support panda_simulation.launch controller_type:=effort`
+
 https://github.com/erdalpekel/panda_simulation/issues/9
 
-Ignore the following error when launching:
+Ignore the following error when launching in position mode:
 `[ERROR] [1584377149.867905243, 0.071000000]: No p gain specified for pid. Namespace: /gazebo_ros_control/pid_gains/panda_joint1`
 As noted by the original developer of the package, "The reason why we are not specifying those parameters is that we want to use the Gazebo internal joint position controller, not the PID controller."
 
