@@ -36,4 +36,4 @@ panda_arm.set_end_effector_link("panda_gripper_center")
 # To-Do
 
 1. Make it easy to move back and forth from simulation to the real robot. I think it mainly needs changes to the controller list in the MoveIt! config.
-2. Update dynamics parameters using http://diag.uniroma1.it/~gaz/panda2019.html
+\[x] Update dynamics parameters using http://diag.uniroma1.it/~gaz/panda2019.html
