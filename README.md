@@ -19,7 +19,9 @@ sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs ros-$ROS_DISTRO-libuvc ros-$ROS
 ## Notes
 
 Default controllers used are `hardware_interface/PositionJointInterface`, if you need effort controllers use the following launch command:
-`roslaunch panda_simulator_support panda_simulation.launch controller_type:=effort`
+```sh
+roslaunch panda_simulator_support panda_simulation.launch controller_type:=effort
+```
 
 https://github.com/erdalpekel/panda_simulation/issues/9
 
