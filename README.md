@@ -7,6 +7,7 @@ Please enure you have these Install dependencies:
 
     ```sh
     sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs ros-$ROS_DISTRO-libuvc ros-$ROS_DISTRO-gazebo-ros-control
+    ```
 
 ## Installation and Usage
 1. `git clone https://git.uwaterloo.ca/vrajendr/panda_simulator.git` (into your catkin workspace e.g. catkin_ws/src folder) or add as a submodule `git submodule add https://git.uwaterloo.ca/vrajendr/panda_simulator.git`
