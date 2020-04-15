@@ -1,8 +1,11 @@
 <launch>
     <!-- new gripper_center link argument -->
     <arg name="gripper_center" default="true"/>
+
+    <!-- new gripper_center link argument -->
+    <arg name="controller_type" default="position"/>
     
-    <param name="robot_description" command="$(find xacro)/xacro --inorder  '$(find franka_description)/robots/panda_arm_hand.urdf.xacro' 'gripper_center:=$(arg gripper_center)'"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder  '$(find franka_description)/robots/panda_arm_hand.urdf.xacro' 'gripper_center:=$(arg gripper_center)' 'controller_type:=$(arg controller_type)'"/>
 
     <!-- GAZEBO arguments -->
     <arg name="paused" default="false"/>
@@ -25,7 +28,13 @@
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model panda"/>
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
-    <rosparam file="$(find panda_simulation)/config/panda_control.yaml" command="load"/>
+    <group if="$(eval arg('controller_type') == 'position')">
+        <rosparam file="$(find panda_simulator_support)/config/panda_control_position.yaml" command="load"/>
+    </group>
+
+    <group if="$(eval arg('controller_type') == 'effort')">
+        <rosparam file="$(find panda_simulator_support)/config/panda_control_effort.yaml" command="load"/>
+    </group>
 
     <!-- load the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller panda_arm_controller" />
@@ -35,7 +44,7 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
 
     <include file="$(find panda_moveit_config)/launch/planning_context.launch">
-        <arg name="load_robot_description" value="true"/>
+        <arg name="load_robot_description" value="false"/>
 	<arg name="load_gripper" value="$(arg load_gripper)" />
         <arg name="gripper_center" value="$(arg gripper_center)"/>
     </include>
@@ -52,12 +61,14 @@
     <!-- launch robot control node for moveit motion planning -->
     <node pkg="panda_simulation" type="robot_control_node" name="robot_control_node" output="screen" />
 
-    <!-- load (not start!) custom joint position controller -->
-    <node pkg="controller_manager" type="spawner" name="joint_position_launcher" args="--stopped joint_position_controller" />
+    <!-- Only need the nodes below if using position controller-->
+    <group if="$(eval arg('controller_type') == 'position')">
+        <!-- load (not start!) custom joint position controller -->
+        <node pkg="controller_manager" type="spawner" name="joint_position_launcher" args="--stopped joint_position_controller" />
 
-    <!-- run custom node for automatic intialization -->
-    <node pkg="panda_simulation" type="robot_state_initializer_node" name="robot_state_initializer_node" />
-
+        <!-- run custom node for automatic intialization -->
+        <node pkg="panda_simulation" type="robot_state_initializer_node" name="robot_state_initializer_node" />
+    </group>
 
 </launch>
 
