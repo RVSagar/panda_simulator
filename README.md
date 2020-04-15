@@ -3,13 +3,14 @@
 ## Package Overview
 Repository that hosts all the required ROS packages for simulating the Franka Emika Panda Arm in Gazebo. libfranka is also required, but not included here. Please ensure you have `ros-kinetic-gazebo-ros-pkgs` and `ros-kinetic-gazebo-ros-control` installed (i.e. sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control)
 
+## Installation and Usage
 1. `git clone https://git.uwaterloo.ca/vrajendr/panda_simulator.git` (into your catkin workspace e.g. catkin_ws/src folder) or add as a submodule `git submodule add https://git.uwaterloo.ca/vrajendr/panda_simulator.git`
 2. `git submodule update --init --recursive`
 3. `catkin build` from your catkin workspace folder
 4. remember to `source devel/setup.bash` 
 5. `roslaunch panda_simulator_support panda_simulation.launch` (this will start up Gazebo and RVIZ and will allow you to do planning etc. with the robot)
 
-Notes:
+## Notes
 
 Default controllers used are `hardware_interface/PositionJointInterface`, if you need effort controllers use the following launch command:
 `roslaunch panda_simulator_support panda_simulation.launch controller_type:=effort`
