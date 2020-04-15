@@ -1,7 +1,12 @@
 # panda_simulator
 
 ## Package Overview
-Repository that hosts all the required ROS packages for simulating the Franka Emika Panda Arm in Gazebo. libfranka is also required, but not included here. Please ensure you have `ros-kinetic-gazebo-ros-pkgs` and `ros-kinetic-gazebo-ros-control` installed (i.e. sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control)
+Repository that hosts all the required ROS packages for simulating the Franka Emika Panda Arm in Gazebo. libfranka is also required, but not included here. 
+
+Please enure you have these Install dependencies:
+
+    ```sh
+    sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs ros-$ROS_DISTRO-libuvc ros-$ROS_DISTRO-gazebo-ros-control
 
 ## Installation and Usage
 1. `git clone https://git.uwaterloo.ca/vrajendr/panda_simulator.git` (into your catkin workspace e.g. catkin_ws/src folder) or add as a submodule `git submodule add https://git.uwaterloo.ca/vrajendr/panda_simulator.git`
