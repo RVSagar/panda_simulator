@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: panda_toolbox_task_support
+    relative_path: robots/panda_arm_hand_table.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/panda.srdf.xacro
+  CONFIG:
+    author_name: Sagar Rajendran
+    author_email: sagar.rajendran@uwaterloo.ca
+    generated_timestamp: 1564236674

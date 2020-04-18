@@ -1,0 +1,37 @@
+<?xml version="0.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="table"  params="prefix">
+
+    <link name="table_link">
+      <contact>
+        <lateral_friction value="1.0"/>
+      </contact>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="60" />
+        <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+      </inertial>
+
+      <visual>
+        <geometry>
+          <mesh filename="package://panda_simulator_support/meshes/formaspace_base_table_v7_scaled.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="${0.79743/2} ${1.5949/2} ${0.926975/2}" rpy="0 0 0" />
+        <geometry>
+          <!-- <mesh filename="package://panda_toolbox_task_support/meshes/formaspace_base_table_v7_scaled.dae" scale="1 1 1"/> -->
+          <box size="0.79743 1.5949 0.926975"/>
+        </geometry>
+      </collision>
+    </link>
+
+<!-- http://answers.gazebosim.org/question/9128/cant-get-self_collide-working/ -->
+<!-- https://github.com/robotology/icub-gazebo/issues/21 -->
+    <gazebo reference="table_link">
+      <self_collide>1</self_collide>
+      <static>1</static>
+    </gazebo>
+  </xacro:macro>
+</robot>

@@ -45,11 +45,11 @@
 
     <include file="$(find panda_moveit_config)/launch/planning_context.launch">
         <arg name="load_robot_description" value="false"/>
-	<arg name="load_gripper" value="$(arg load_gripper)" />
+	    <arg name="load_gripper" value="$(arg load_gripper)" />
         <arg name="gripper_center" value="$(arg gripper_center)"/>
     </include>
     <include file="$(find panda_moveit_config)/launch/move_group.launch" >
-	<arg name="load_gripper" value="$(arg load_gripper)" />
+	    <arg name="load_gripper" value="$(arg load_gripper)" />
         <arg name="gripper_center" value="$(arg gripper_center)"/>
     </include>
     <group if="$(arg gui)">
