@@ -6,7 +6,7 @@ Repository that hosts all the required ROS packages for simulating the Franka Em
 Please enure you have these dependencies:
 
 ```sh
-sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs ros-$ROS_DISTRO-libuvc ros-$ROS_DISTRO-gazebo-ros-control ros-$ROS_DISTRO-libfranka
+sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs ros-$ROS_DISTRO-gazebo-ros-control ros-$ROS_DISTRO-libfranka
 ```
 
 ## Installation and Usage
