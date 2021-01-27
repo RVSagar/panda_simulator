@@ -29,6 +29,8 @@
     <xacro:if value="${controller_type == 'effort'}">
         <xacro:include filename="$(find franka_description)/robots/panda.transmission.effort.xacro"/>
     </xacro:if>
+    
+    <xacro:include filename="$(find panda_simulator_support)/urdf/gzplugin_grasp_fix.xacro"/>
     <!-- end for simulation -->
 
     <!-- Generate urdfs -->
@@ -38,6 +40,7 @@
     <!-- for simulation -->
     <xacro:panda_gazebo robot_name="$(arg robot_name)" />
     <xacro:panda_transmission robot_name="$(arg robot_name)" load_hand="true" />
+    <xacro:gzplugin_grasp_fix robot_name="$(arg robot_name)"/>
     <!-- end for simulation -->
 
 </robot>

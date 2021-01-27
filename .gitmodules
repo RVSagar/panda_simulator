@@ -7,3 +7,9 @@
 [submodule "panda_moveit_config"]
 	path = panda_moveit_config
 	url = https://github.com/RVSagar/panda_moveit_config.git
+[submodule "general-message-pkgs"]
+	path = general-message-pkgs
+	url = https://github.com/JenniferBuehler/general-message-pkgs.git
+[submodule "gazebo-pkgs"]
+	path = gazebo-pkgs
+	url = https://github.com/JenniferBuehler/gazebo-pkgs.git
