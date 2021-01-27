@@ -13,6 +13,7 @@
     <arg name="gui" default="true"/>
     <arg name="headless" default="false"/>
     <arg name="debug" default="false"/>
+    <arg name="verbose" default="true"/>
     <arg name="load_gripper" default="true"/>
 
     <!--launch GAZEBO with own world configuration -->
@@ -23,6 +24,7 @@
         <arg name="paused" value="$(arg paused)"/>
         <arg name="use_sim_time" value="$(arg use_sim_time)"/>
         <arg name="headless" value="$(arg headless)"/>
+        <arg name="verbose" value="$(arg verbose)"/>
     </include>
 
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model panda"/>
