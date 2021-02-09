@@ -17,9 +17,10 @@
   </node>
 
 
-  <group unless="$(arg controllers_loaded)">
-    <rosparam command="load" file="$(find panda_interfacing)/config/default_controllers.yaml" />
-  </group>
+  <node name="franka_control" pkg="franka_control" type="franka_control_node" output="screen" required="true">
+    <rosparam command="load" file="$(find franka_control)/config/franka_control_node.yaml" />
+    <param name="robot_ip" value="$(arg robot_ip)" />
+  </node>
 
 
   <node name="state_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="franka_state_controller"/>
