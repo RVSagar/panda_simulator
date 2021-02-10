@@ -2,6 +2,7 @@
   <arg name="robot_ip" />
   <arg name="load_gripper" default="true" />
   <arg name="launch_rviz" default="true" />
+  <arg name="gripper_center" default="true"/>
 
   <include file="$(find panda_simulator_support)/launch/franka_control.launch" >
     <arg name="robot_ip" value="$(arg robot_ip)" />
@@ -10,9 +11,9 @@
 
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="position_joint_trajectory_controller"/>
 
-  <include file="$(find panda_moveit_config)/launch/move_group.launch">
+  <include file="$(find panda_moveit_config)/launch/move_group.launch" >
     <arg name="load_gripper" value="$(arg load_gripper)" />
-    <arg name="gripper_center" value="true"/>
+      <arg name="gripper_center" value="$(arg gripper_center)"/>
   </include>
 
   <include file="$(find panda_moveit_config)/launch/moveit_rviz.launch" if="$(arg launch_rviz)" />
